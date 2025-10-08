@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if (isset($_SESSION["authorized"]) || (isset($_POST["password"]) && $_POST["password"] === "CS2A")) {
+    if (isset($_SESSION["authorized"]) || (isset($_POST["password"]) && password_verify($_POST["password"], '$2y$10$t5mfsu1O74ncn6ABbIl//enngvJQ9wI36vnwgJOi6WdiKXg4GEP6y'))) {
         $_SESSION["authorized"] = true;
         header("Location: login.php");
         exit;
