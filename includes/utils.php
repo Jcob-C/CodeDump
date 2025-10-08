@@ -12,7 +12,7 @@
 
     function displayMessage() {
         if (isset($_SESSION['popupMessage'])) {
-            echo '<h1 style="color: #ff0000ff;">'. $_SESSION['popupMessage'] . '</h1><hr>';
+            echo '<h1 align="center" style="color: #ff0000ff;">'. $_SESSION['popupMessage'] . '</h1><hr>';
             unset($_SESSION['popupMessage']);
         }
     }

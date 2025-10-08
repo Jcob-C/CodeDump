@@ -6,14 +6,20 @@
     require_once "includes/utils.php";
 
     checkPost();
+    displayMessage();
 
     function checkPost() {
         if (isset($_POST['backtohome'])) {
             headto('home.php');
         }
         elseif (isset($_POST['submitPost'])) {
-            createNewPost($_SESSION["loggedinUserID"], $_POST['title'], $_POST['code']);
-            headto("home.php");
+            if (strlen(trim($_POST['title'])) < 1 || strlen(trim($_POST['code'])) < 1) {
+                $_SESSION['popupMessage'] = 'Incomplete post!';
+            }
+            else {
+                createNewPost($_SESSION["loggedinUserID"], $_POST['title'], $_POST['code']);
+                headto("home.php");  
+            }
         }
         clearPosts();
     }
