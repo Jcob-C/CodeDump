@@ -1,0 +1,151 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    padding: 15px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #f0f0f0;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 1.6em; /* smaller */
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 1.3em; /* smaller */
+    margin-top: 25px;
+}
+
+h3 {
+    font-size: 1em; /* smaller */
+    color: #bbbbbb;
+    margin-left: 8px;
+    margin-top: 4px;
+}
+
+/* Paragraphs */
+p {
+    font-size: 0.85em; /* smaller */
+    color: #c0c0c0;
+    margin-bottom: 8px;
+}
+
+/* Buttons */
+form button {
+    background-color: #8b0000;
+    border: 1px solid #aa0000;
+    color: #fff0f0;
+    padding: 7px 15px; /* smaller padding */
+    margin: 4px 4px 8px 0;
+    font-size: 0.9em; /* smaller font */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+form button:hover {
+    background-color: #b30000;
+    color: #ffffff;
+}
+
+/* Links */
+a {
+    color: #ff4d4d;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Divider */
+hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #444;
+}
+
+/* Textareas (code posts) */
+textarea {
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85em; /* smaller font */
+    background-color: #2d2d2d;
+    color: #00ff88;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 8px; /* less padding */
+    resize: vertical;
+    margin-bottom: 25px;
+
+    white-space: pre;
+    overflow-x: auto;
+    overflow-wrap: normal;
+    word-wrap: normal;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 300px) {
+    body {
+        padding: 8px;
+    }
+
+    textarea {
+        width: 95%;
+        font-size: 0.75em;
+    }
+
+    form button {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1em;
+    }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"] {
+    background-color: #2d2d2d;
+    color: #00ff88;
+    border: 1px solid #555;
+    padding: 8px; /* smaller padding */
+    border-radius: 4px;
+    font-size: 0.9em; /* smaller font */
+    
+    width: 100%;
+    max-width: 380px;
+    
+    margin-bottom: 12px;
+    display: block;
+    
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 5px #ff4d4d;
+    outline: none;
+}
