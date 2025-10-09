@@ -88,6 +88,7 @@
             <input type="text" placeholder="Username" name="username" required>
             <input type="password" placeholder="Password" name="password" required>
             <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
+            <br>
             <input type="password" placeholder="Access Code" name="accessCode" required>
             <button type="submit" name="signup">Create Account</button>
         </form>
