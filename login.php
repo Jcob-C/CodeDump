@@ -3,16 +3,9 @@
     require_once 'includes/db.php'; 
     require_once 'includes/utils.php';
 
-    checkIfAuthorized();
     checkIfLoggedIn();
     checkPost();
     displayMessage();
-
-    function checkIfAuthorized() {
-        if (!isset($_SESSION["authorized"])) {
-            headto("index.php");
-        }
-    }
 
     function checkIfLoggedIn() {
         if (isset($_SESSION["loggedinUserID"])) {
@@ -60,6 +53,9 @@
         elseif ($password !== $confirmPassword) {
             $_SESSION['popupMessage'] = "Passwords are not identical!";
         }
+        elseif (!password_verify($_POST["accessCode"], '$2y$10$t5mfsu1O74ncn6ABbIl//enngvJQ9wI36vnwgJOi6WdiKXg4GEP6y')) {
+            $_SESSION['popupMessage'] = "Incorrect Access Code!";
+        }
         elseif (createUser($username, password_hash($password, PASSWORD_DEFAULT))) {
             $_SESSION['popupMessage'] = "Account created successfully!";
         } 
@@ -92,6 +88,7 @@
             <input type="text" placeholder="Username" name="username" required>
             <input type="password" placeholder="Password" name="password" required>
             <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
+            <input type="password" placeholder="Access Code" name="accessCode" required>
             <button type="submit" name="signup">Create Account</button>
         </form>
     </body>
